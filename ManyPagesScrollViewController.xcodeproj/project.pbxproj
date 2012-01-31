@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80B6817F14D760AC00DB450E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B6817E14D760AC00DB450E /* UIKit.framework */; };
+		80B6818114D760AC00DB450E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B6818014D760AC00DB450E /* Foundation.framework */; };
+		80B6818314D760AC00DB450E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B6818214D760AC00DB450E /* CoreGraphics.framework */; };
+		80B6818914D760AC00DB450E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80B6818714D760AC00DB450E /* InfoPlist.strings */; };
+		80B6818B14D760AC00DB450E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B6818A14D760AC00DB450E /* main.m */; };
+		80B6818F14D760AC00DB450E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B6818E14D760AC00DB450E /* AppDelegate.m */; };
+		80B6819214D760AC00DB450E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B6819014D760AC00DB450E /* MainStoryboard.storyboard */; };
+		80B6819514D760AC00DB450E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B6819414D760AC00DB450E /* ViewController.m */; };
+		80B6819D14D7624000DB450E /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B6819C14D7624000DB450E /* ContentViewController.m */; };
+		80B681A114D7635100DB450E /* 275x400_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 80B6819E14D7635100DB450E /* 275x400_2.jpeg */; };
+		80B681A214D7635100DB450E /* 275x400_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 80B6819F14D7635100DB450E /* 275x400_1.jpeg */; };
+		80B681A314D7635100DB450E /* 275x400_3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 80B681A014D7635100DB450E /* 275x400_3.jpeg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		80B6817A14D760AC00DB450E /* ManyPagesScrollViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManyPagesScrollViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B6817E14D760AC00DB450E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		80B6818014D760AC00DB450E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		80B6818214D760AC00DB450E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		80B6818614D760AC00DB450E /* ManyPagesScrollViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ManyPagesScrollViewController-Info.plist"; sourceTree = "<group>"; };
+		80B6818814D760AC00DB450E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		80B6818A14D760AC00DB450E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		80B6818C14D760AC00DB450E /* ManyPagesScrollViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ManyPagesScrollViewController-Prefix.pch"; sourceTree = "<group>"; };
+		80B6818D14D760AC00DB450E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		80B6818E14D760AC00DB450E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		80B6819114D760AC00DB450E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		80B6819314D760AC00DB450E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		80B6819414D760AC00DB450E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		80B6819B14D7624000DB450E /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		80B6819C14D7624000DB450E /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		80B6819E14D7635100DB450E /* 275x400_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 275x400_2.jpeg; path = ../../../../images/275x400_2.jpeg; sourceTree = "<group>"; };
+		80B6819F14D7635100DB450E /* 275x400_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 275x400_1.jpeg; path = ../../../../images/275x400_1.jpeg; sourceTree = "<group>"; };
+		80B681A014D7635100DB450E /* 275x400_3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 275x400_3.jpeg; path = ../../../../images/275x400_3.jpeg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80B6817714D760AC00DB450E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B6817F14D760AC00DB450E /* UIKit.framework in Frameworks */,
+				80B6818114D760AC00DB450E /* Foundation.framework in Frameworks */,
+				80B6818314D760AC00DB450E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80B6816F14D760AC00DB450E = {
+			isa = PBXGroup;
+			children = (
+				80B6818414D760AC00DB450E /* ManyPagesScrollViewController */,
+				80B6817D14D760AC00DB450E /* Frameworks */,
+				80B6817B14D760AC00DB450E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80B6817B14D760AC00DB450E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80B6817A14D760AC00DB450E /* ManyPagesScrollViewController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80B6817D14D760AC00DB450E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80B6817E14D760AC00DB450E /* UIKit.framework */,
+				80B6818014D760AC00DB450E /* Foundation.framework */,
+				80B6818214D760AC00DB450E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80B6818414D760AC00DB450E /* ManyPagesScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				80B6819F14D7635100DB450E /* 275x400_1.jpeg */,
+				80B6819E14D7635100DB450E /* 275x400_2.jpeg */,
+				80B681A014D7635100DB450E /* 275x400_3.jpeg */,
+				80B6818D14D760AC00DB450E /* AppDelegate.h */,
+				80B6818E14D760AC00DB450E /* AppDelegate.m */,
+				80B6819014D760AC00DB450E /* MainStoryboard.storyboard */,
+				80B6819314D760AC00DB450E /* ViewController.h */,
+				80B6819414D760AC00DB450E /* ViewController.m */,
+				80B6818514D760AC00DB450E /* Supporting Files */,
+				80B6819B14D7624000DB450E /* ContentViewController.h */,
+				80B6819C14D7624000DB450E /* ContentViewController.m */,
+			);
+			path = ManyPagesScrollViewController;
+			sourceTree = "<group>";
+		};
+		80B6818514D760AC00DB450E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				80B6818614D760AC00DB450E /* ManyPagesScrollViewController-Info.plist */,
+				80B6818714D760AC00DB450E /* InfoPlist.strings */,
+				80B6818A14D760AC00DB450E /* main.m */,
+				80B6818C14D760AC00DB450E /* ManyPagesScrollViewController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80B6817914D760AC00DB450E /* ManyPagesScrollViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B6819814D760AC00DB450E /* Build configuration list for PBXNativeTarget "ManyPagesScrollViewController" */;
+			buildPhases = (
+				80B6817614D760AC00DB450E /* Sources */,
+				80B6817714D760AC00DB450E /* Frameworks */,
+				80B6817814D760AC00DB450E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ManyPagesScrollViewController;
+			productName = ManyPagesScrollViewController;
+			productReference = 80B6817A14D760AC00DB450E /* ManyPagesScrollViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80B6817114D760AC00DB450E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 80B6817414D760AC00DB450E /* Build configuration list for PBXProject "ManyPagesScrollViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 80B6816F14D760AC00DB450E;
+			productRefGroup = 80B6817B14D760AC00DB450E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80B6817914D760AC00DB450E /* ManyPagesScrollViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80B6817814D760AC00DB450E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B6818914D760AC00DB450E /* InfoPlist.strings in Resources */,
+				80B6819214D760AC00DB450E /* MainStoryboard.storyboard in Resources */,
+				80B681A114D7635100DB450E /* 275x400_2.jpeg in Resources */,
+				80B681A214D7635100DB450E /* 275x400_1.jpeg in Resources */,
+				80B681A314D7635100DB450E /* 275x400_3.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80B6817614D760AC00DB450E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B6818B14D760AC00DB450E /* main.m in Sources */,
+				80B6818F14D760AC00DB450E /* AppDelegate.m in Sources */,
+				80B6819514D760AC00DB450E /* ViewController.m in Sources */,
+				80B6819D14D7624000DB450E /* ContentViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		80B6818714D760AC00DB450E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B6818814D760AC00DB450E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		80B6819014D760AC00DB450E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B6819114D760AC00DB450E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80B6819614D760AC00DB450E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		80B6819714D760AC00DB450E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80B6819914D760AC00DB450E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ManyPagesScrollViewController/ManyPagesScrollViewController-Prefix.pch";
+				INFOPLIST_FILE = "ManyPagesScrollViewController/ManyPagesScrollViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		80B6819A14D760AC00DB450E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ManyPagesScrollViewController/ManyPagesScrollViewController-Prefix.pch";
+				INFOPLIST_FILE = "ManyPagesScrollViewController/ManyPagesScrollViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80B6817414D760AC00DB450E /* Build configuration list for PBXProject "ManyPagesScrollViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B6819614D760AC00DB450E /* Debug */,
+				80B6819714D760AC00DB450E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B6819814D760AC00DB450E /* Build configuration list for PBXNativeTarget "ManyPagesScrollViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B6819914D760AC00DB450E /* Debug */,
+				80B6819A14D760AC00DB450E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80B6817114D760AC00DB450E /* Project object */;
+}
