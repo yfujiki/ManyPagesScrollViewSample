@@ -3,7 +3,7 @@
 //  ManyPagesScrollViewController
 //
 //  Created by Yuichi Fujiki on 1/30/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Yuichi Fujiki. All rights reserved.
 //
 
 #import "ContentViewController.h"

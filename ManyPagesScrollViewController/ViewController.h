@@ -3,7 +3,7 @@
 //  ManyPagesScrollViewController
 //
 //  Created by Yuichi Fujiki on 1/30/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Yuichi Fujiki. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,12 +14,9 @@
 @property (nonatomic, assign) IBOutlet UIScrollView * scrollView;
 @property (nonatomic, retain) NSMutableArray * data;
 @property (nonatomic) int currentPage;
-@property (nonatomic, retain) NSMutableArray * contentControllers;
-
-//@property (nonatomic, retain) ContentViewController * prevViewController;
-//@property (nonatomic, retain) ContentViewController * currentViewController;
-//@property (nonatomic, retain) ContentViewController * postViewController;
+@property (nonatomic, retain) NSMutableSet * visibleContentControllers;
+@property (nonatomic, retain) NSMutableSet * recycleContentControllers;
 
 - (void)loadPage:(int)pageNum;
-- (void)loadPageBody:(int)pageNum;
+
 @end

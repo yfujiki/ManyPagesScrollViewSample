@@ -3,7 +3,7 @@
 //  ManyPagesScrollViewController
 //
 //  Created by Yuichi Fujiki on 1/30/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Yuichi Fujiki. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -16,8 +16,8 @@
 @synthesize scrollView = _scrollView;
 @synthesize data = _data;
 @synthesize currentPage = _currentPage;
-//@synthesize prevViewController = _prevViewController, currentViewController = _currentViewController, postViewController = _postViewController;
-@synthesize contentControllers;
+@synthesize recycleContentControllers;
+@synthesize visibleContentControllers;
 
 - (void)didReceiveMemoryWarning
 {
@@ -43,15 +43,8 @@
     }
     
     // Initialize view controllers
-    self.contentControllers = [[NSMutableArray alloc] initWithCapacity:kContentControllerSize];
-
-    for(int i=0; i<kContentControllerSize; i++)
-    {
-        ContentViewController * contentViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ContentViewController"];
-        contentViewController.delegate = self;        
-        
-        [self.contentControllers addObject:contentViewController];
-    }
+    self.visibleContentControllers = [[NSMutableSet alloc] initWithCapacity:kContentControllerSize];
+    self.recycleContentControllers = [[NSMutableSet alloc] initWithCapacity:kContentControllerSize];
     
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * kDataSize, self.view.frame.size.height);
     self.scrollView.scrollEnabled = YES;
@@ -95,54 +88,70 @@
 
 #pragma mark - ScrollViewDelegate
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    CGFloat offset = scrollView.contentOffset.x;
-    int pageOffset = (int)(offset/self.view.frame.size.width);
-    [self loadPage:pageOffset];
+//
+// scrollViewDidScroll is called every time when scroll starts, and before actual drawing happens.
+// So, it is ideal place to load all visible content views.
+//
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGRect visibleRect = scrollView.bounds;
+    int firstPageIndex = floorf(CGRectGetMinX(visibleRect) / CGRectGetWidth(visibleRect));
+    int lastPageIndex = floorf((CGRectGetMaxX(visibleRect) - 1) / CGRectGetWidth(visibleRect));
+    int neededFirstPageIndex = MAX(firstPageIndex, 0);
+    int neededLastPageIndex = MIN(lastPageIndex, kDataSize);
+
+//    NSLog(@"Visible page from %d to %d", neededFirstPageIndex, neededLastPageIndex);
+    
+    for(int i = neededFirstPageIndex; i <= neededLastPageIndex; i++)
+    {
+        if(![self isPageVisibleAtIndex:i]) // Do not (re)load page if it is already visible.
+            [self loadPage:i];
+    }
+    
+    // Reconfigure recycleContentControllers/visibleControllers
+    for(ContentViewController * controller in self.visibleContentControllers)
+    {
+        if(controller.pageIndex < neededFirstPageIndex || controller.pageIndex > neededLastPageIndex)
+        {
+            [self.recycleContentControllers addObject:controller];
+        }
+    }
+    [self.visibleContentControllers minusSet:self.recycleContentControllers];
 }
 
 #pragma mark - loading Page View
-- (void)loadPage : (int) pageNum {
-    
-    int numberOfPrePostPages = (int)((kContentControllerSize - 1) / 2);
-    
-    if(pageNum >= numberOfPrePostPages)
-    {
-        // Preload one pages before
-        for(int i=1; i<=numberOfPrePostPages; i++)
-        {
-            [self loadPageBody:pageNum - i];
-        }
-    }
-        
-    [self loadPageBody:pageNum];
-    
-    if(pageNum < kDataSize - numberOfPrePostPages)
-    {
-        // Preload one pages after
-        for(int i=1; i<=numberOfPrePostPages; i++)
-        {
-            [self loadPageBody:pageNum + i];
-        }
-    }
-    
-    self.currentPage = pageNum;
-}
-
-- (void)loadPageBody:(int) pageNum {
+- (void)loadPage:(int) pageNum {
     // Clear content view controller that is going to be reused for this page.
     // Remove its view from superview and remove itself from parent view controller.
-    ContentViewController * pageContentController = [self.contentControllers objectAtIndex:(pageNum % kContentControllerSize)];
+    ContentViewController * pageContentController = [self dequeueContentController];
+    if(!pageContentController)
+    {
+        pageContentController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ContentViewController"];
+        pageContentController.delegate = self;
+    }
     [pageContentController removeFromParentViewController];
     [pageContentController.view removeFromSuperview];
-
+    [self.visibleContentControllers addObject:pageContentController];
+    
     // Set content specific to the page
+    pageContentController.pageIndex = pageNum;
     pageContentController.imageView.image = [UIImage imageNamed:[self.data objectAtIndex:(pageNum % 3)]];
     pageContentController.pageLabel.text = [NSString stringWithFormat:@"Page : %d", pageNum];
-    if(pageNum > 0 && pageNum < kDataSize - 1)
-        [pageContentController.prevButton setEnabled:YES];
+    if(pageNum == 0)
+    {
+        [pageContentController.prevButton setEnabled:NO];
+        [pageContentController.nextButton setEnabled:YES];        
+    }
+    else if(pageNum == kDataSize - 1)
+    {
+        [pageContentController.prevButton setEnabled:YES];        
+        [pageContentController.nextButton setEnabled:NO];        
+    }
     else
-        [pageContentController.prevButton setEnabled:NO];        
+    {
+        [pageContentController.prevButton setEnabled:YES];        
+        [pageContentController.nextButton setEnabled:YES];                
+    }
     
     // Set position of the page view
     pageContentController.view.frame = 
@@ -180,4 +189,23 @@
         }];
     }];
 }
+
+#pragma mark - Private method for recycling ContentViewControllers
+- (BOOL) isPageVisibleAtIndex : (int) pageIndex
+{
+    for(ContentViewController * pageContentController in self.visibleContentControllers)
+    {
+        if(pageContentController.pageIndex == pageIndex)
+            return YES;
+    }
+    return NO;
+}
+
+- (ContentViewController *) dequeueContentController {
+    ContentViewController * controller = [self.recycleContentControllers anyObject];
+    if(controller)
+        [self.recycleContentControllers removeObject:controller];
+    return controller;
+}
+
 @end
